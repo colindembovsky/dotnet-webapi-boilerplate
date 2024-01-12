@@ -1,8 +1,19 @@
 name: "Custom CodeQL Config for lower precision"
 disable-default-queries: true
-queries:
-  - uses: security-extended
-  - uses: security-and-quality
+# queries:
+# The following suites alredy have the low precision queries filtered out
+#   - uses: security-extended
+#   - uses: security-and-quality
+packs:         
+    # All queries from the CodeQL Built in packs (including low/no precision queries)
+    - codeql/cpp-queries:.    
+    - codeql/csharp-queries:.    
+    - codeql/go-queries:.    
+    - codeql/java-queries:.
+    - codeql/javascript-queries:.
+    - codeql/python-queries:.
+    - codeql/ruby-queries:.
+    - codeql/swift-queries:.
 query-filters:
 - include:
     kind:
